@@ -11,8 +11,8 @@ async function cargarPersonas() {
     }
   }
   
-  document.addEventListener("DOMContentLoaded", async () => {
-    let personas = await cargarPersonas();
+document.addEventListener("DOMContentLoaded", async () => {
+  let personas = JSON.parse(localStorage.getItem("personas")) || await cargarPersonas();
   
     function guardarPersonas() {
       localStorage.setItem("personas", JSON.stringify(personas));
